@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Theater</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="wrapper">
+    <header>
+        <button class="login">login/logout</button>
+        <img src="logo.png" class="logo"/>
+  	</header>
+  
+  	<div id="intro">
+        <nav class="topnav">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='movie.html'">Movie</button>
+            <button onclick="window.location.href='theater.html'" class="active">Theater</button>
+            <button onclick="window.location.href='promotion.html'">Promotion</button>
+        </nav>
+
+        <p>This is an introduction of the theatre. This is an introduction of the theatre. This is an introduction of the theatre. This is an introduction of the theatre. This is an introduction of the theatre. </p>
+        <div id="googleMap"></div>
+        <script>
+            function myMap() {
+                var mapProp= {
+                  center:new google.maps.LatLng(1.290270, 103.851959),
+                  zoom:9,
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-L7L5IqsvZ8ycdU_0O7OJOyWCcLiQst0&callback=myMap"></script>
+    </div>
+    
+    <div id="theaterlist">
+        <ul>
+            <li>theater1</li>
+            <li>theater2</li>
+            <li>theater3</li>
+            <li>theater4</li>
+            <li>theater5</li>
+            <li>theater6</li>
+            <li>theater7</li>
+            <li>theater8</li>
+        </ul>
+    </div>
+
+    <div id="theaterportal">
+        <table>
+            <tr>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+            </tr>
+            <tr>
+                <td>This is a description.</td>
+                <td>This is a description.</td>
+                <td>This is a description.</td>
+                <td>This is a description.</td>
+            </tr>
+            <tr>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+            </tr>
+            <tr>
+                <td>This is a description.</td>
+                <td>This is a description.</td>
+                <td>This is a description.</td>
+                <td>This is a description.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+
+<footer>
+    <small><i>Copyright &copy; 2019 DG03-F38</i></small>
+    <br>
+    <small><i><a href="DG03@F38.com">DG03@F38.com</a></i></small>
+</footer>	
+</html>
+
+

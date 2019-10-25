@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Movie</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="wrapper">
+    <header>
+        <button class="login">login/logout</button>
+        <img src="logo.png" class="logo"/>
+        <script type = "text/javascript" src = "moivelist.js"></script>
+  	</header>
+  
+  	<div id="content">
+        <div>
+            <nav class="topnav">
+                <button onclick="window.location.href='index.html'">Home</button>
+                <button onclick="window.location.href='movie.html'" class="active">Movie</button>
+                <button onclick="window.location.href='theater.html'">Theater</button>
+                <button onclick="window.location.href='promotion.html'">Promotion</button>
+            </nav>
+
+            <h1>Movie</h1>
+            <nav class="topnav">
+                <button onclick="showForm(0)" class="topnav active" id="btn0">Now Showing</button>
+                <button onclick="showForm(1)" class="topnav" id="btn1">Coming Soon</button>
+            </nav>
+
+            <form action="show_get.php" class="sort">
+                <p>Sort by:
+                <select>
+                <option value="none">none</option>
+                <optgroup label="Genre">
+                    <option value="action">Action</option>
+                    <option value="romance">Romance</option>
+                    <option value="thriller">Thriller</option>
+                </optgroup>
+                <optgroup label="Rating">
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG-13">PG-13</option>
+                    <option value="R">R</option>
+                    <option value="NC-17">NC-17</option>
+                </optgroup>
+                <optgroup label="Theater">
+                    <option value="TheaterA">Theater A</option>
+                    <option value="TheaterB">Theater B</option>
+                </optgroup>
+                </select>
+                <input type="submit">
+                </p>
+            </form>
+        </div>  
+
+        <div class="movie_active" id="showing">
+            <form method="POST" action="show_get.php" class="movie_container">
+            <table>
+                <tr>
+                    <td rowspan="4"><img src="Poster-AWitnessOutOfTheBlue.jpg"/></td>
+                    <td>Title</td>
+                    <td>A Witness Out Of The Blue</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">Detective Frank Lam (Louis Cheung) arrives at the scene with his commanding officer Yip Sir (Philip Keung) to find a dead man inside an apartment with a strange noise “Help! Help!” next to its body. Yip Sir is convinced 
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><img src="Poster-CanYou-KeepASecret.jpg"/></td>
+                    <td>Title</td>
+                    <td>Can You Keep a Secret</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">Based on the New York Times Bestseller by Sophie Kinsella (Confessions of a Shopaholic) comes the new film CAN YOU KEEP A SECRET.  Thinking they're about to crash, Emma (Alexandra Daddario) spills her secrets to a  
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><img src="Poster-MaleficentMistressOfEvil-V2.jpg"/></td>
+                    <td>Title</td>
+                    <td>Maleficient Mistress Of Evil</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">A fantasy adventure that picks up several years after "Maleficent," in which audiences learned of the events that hardened the heart of Disney's most notorious villain and drove her to curse a baby Princess Aurora,  
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><img src="Poster-TheClimbers.jpg"/></td>
+                    <td>Title</td>
+                    <td>The Climbers</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">Based on a true story, Chinese climbers make a historic summit up Mount Everest - the first to ever do so from the North Ridge. Well-known as the most challenging side of the mountain, the perilous journey takes   
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><img src="Poster-TheLionKing-V3.jpg"/></td>
+                    <td>Title</td>
+                    <td>The Lion King</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">From Disney Live Action, director Jon Favreau's all-new The Lion King journeys to the African savanna where a future king is born. Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny. But not 
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>    
+            </table>
+            </form>    
+        </div>
+            
+        <div class="movie_popup" id="coming">
+            <form method="POST" action="show_get.php" class="movie_container">
+            <table>
+                <tr>
+                    <td rowspan="4"><img src="Poster-Bigil.jpg"/></td>
+                    <td>Title</td>
+                    <td>Bigil</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>2h 8mins</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">The film revolves around a football coach, who struggles to fulfill the dream of his late friend and seeks out revenge on the death of his best friend.
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><img src="Poster-TerminatorDarkFate-V2.jpg"/></td>
+                    <td>Title</td>
+                    <td>Terminator: Dark Fate</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>2h 8mins</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">More than two decades after the events of Terminator 2: Judgment Day, Sarah Connor sets out to protect a young woman named Dani Ramos and her friends as a liquid metal Terminator, sent from the future 
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>
+                <tr>
+                    <td rowspan="4"><img src="Poster-TheKillTeam.jpg"/></td>
+                    <td>Title</td>
+                    <td>The Kill Team</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>2h 8mins</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td rowspan="2">2017 Academy Award nominated director Dan Krauss adapts his acclaimed documentary THE KILL TEAM into a taut, provocative thriller reminiscent of such classics as THREE DAYS OF THE CONDOR, THE CONVERSATION,  
+                        <a href="moviedetail.html">...more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="window.location.href='buy.html';" value="Buy"></button></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+	</div>	
+</div>
+</body>
+
+<footer>
+    <small><i>Copyright &copy; 2019 DG03-F38</i></small>
+    <br>
+    <small><i><a href="DG03@F38.com">DG03@F38.com</a></i></small>
+</footer>	
+</html>
+
+
