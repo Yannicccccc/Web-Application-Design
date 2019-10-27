@@ -4,6 +4,32 @@
 <title>Buy Ticket</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
+<?php
+    if (isset($_POST['buy1'])) {
+        $movieid = 1;
+    } else if (isset($_POST['buy2'])) {
+        $movieid = 2;
+    } else if (isset($_POST['buy3'])) {
+        $movieid = 3;
+    } else if (isset($_POST['buy4'])) {
+        $movieid = 4;
+    } else{
+        $movieid = 5;
+    }
+
+    @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+    if (mysqli_connect_errno()){
+        echo 'Error: Could not connect to database.  Please try again later.';
+        exit;
+    }
+
+    $query = "SELECT* FROM movie WHERE movieid=" .$movieid. ";";
+    $result = $db->query($query);
+    $data = $result->fetch_assoc();
+
+    $result->free();
+    $db->close();
+?>
 </head>
 
 <body>
@@ -23,14 +49,14 @@
 
         <table class="description">
             <tr>
-                <td rowspan="5"><img src="Poster-AWitnessOutOfTheBlue.jpg"/></td>
-                <td><strong>Witness Out of the Blue</strong></td>
+                <td rowspan="5"><img src="<?php echo $data['pic'];?>"/></td>
+                <td><strong><?php echo $data['title'];?></strong></td>
             </tr>
             <tr>
-                <td>NC16</td>
+                <td><?php echo $data['rate'];?></td>
             </tr>
             <tr>
-                <td>date</td>
+                <td><?php echo date("Y-M-D");?></td>
             </tr>
             <tr>
                 <td>time slot</td>
