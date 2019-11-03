@@ -1,20 +1,49 @@
+-- table of movies and details
 CREATE TABLE movie (
     movieid INT NOT NULL PRIMARY KEY,
-    pic char(100),
-    genre CHAR(50),
-    title CHAR(50),
-    rate CHAR(10),
+    pic VARCHAR(100),
+    genre VARCHAR(50),
+    title VARCHAR(50),
+    rate VARCHAR(10),
     score FLOAT(2,1),
-    main_cast CHAR(100),
-    sub CHAR(50),
-    director CHAR(50),
-    lan CHAR(20),
-    release DATE,
-    synopsis CHAR(500)
-)
-
+    main_cast VARCHAR(100),
+    sub VARCHAR(50),
+    director VARCHAR(50),
+    lan VARCHAR(20),
+    release_date DATE,
+    synopsis VARCHAR(500)
+);
+-- table of movie genres
 CREATE TABLE movie_genre (
     genreid INT NOT NULL PRIMARY KEY,
-    movieid INT NOT NULL FOREIGN KEY REFERENCES movie(movieid),
-    genre CHAR(20)
-)
+    movieid INT NOT NULL REFERENCES movie(movieid),
+    genre VARCHAR(20)
+);
+-- table of slideshow pics
+CREATE TABLE slides (
+    slideid INT NOT NULL PRIMARY KEY,
+    slidepic VARCHAR(100)
+);
+-- table of promotion pics
+CREATE TABLE promos (
+    promoid INT NOT NULL PRIMARY KEY,
+    promopic VARCHAR(100)
+);
+-- table for collecting requests 
+CREATE TABLE corps (
+    corpid INT NOT NULL PRIMARY KEY,
+    corp_date DATE,
+    corp_start VARCHAR(50),
+    corp_cine1 VARCHAR(50),
+    corp_cine2 VARCHAR(50),
+    corp_movie VARCHAR(50),
+    corp_guest INT,
+    corp_req VARCHAR(500),
+    corp_salute VARCHAR(50),
+    corp_name VARCHAR(50),
+    corp_email VARCHAR(50),
+    corp_contact VARCHAR(50),
+    corp_comp VARCHAR(50),
+    corp_address VARCHAR(50),
+    corp_postal VARCHAR(50)
+);

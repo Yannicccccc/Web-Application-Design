@@ -57,7 +57,7 @@
                     <br>DIRECTOR: <?php echo $data['director'];?>
                     <br>GENRE: <?php echo $data['genre'];?>
                     <br>LANGUAGE: <?php echo $data['lan'];?>
-                    <br>RELEASE DATE: <?php echo $data['release'];?>
+                    <br>RELEASE DATE: <?php echo $data['release_date'];?>
                 </td>
             </tr>
             <tr>
