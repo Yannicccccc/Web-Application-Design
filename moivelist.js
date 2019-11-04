@@ -147,3 +147,35 @@ function showForm2(num){
     btn3.className = "topnav active";
   }  
 }
+
+//for switching between login and signup
+function openForm(num) {
+  document.getElementById("login").style.display = "none";
+  document.getElementById("signup").style.display = "none";
+  var btn0 = document.getElementById("btn0");
+  var btn1 = document.getElementById("btn1");
+  if (num==0){
+    document.getElementById("login").style.display = "block";
+    btn0.className = "tablinks active";
+    btn1.className = "tablinks";
+  }
+  if (num==1){
+    document.getElementById("signup").style.display = "block";
+    btn0.className = "tablinks";
+    btn1.className = "tablinks active";
+  }
+}
+
+//for registration to confim both passwords are the same
+function confirmpass() {
+  init_pass = document.getElementById("reg_pass");
+  con_pass = document.getElementById("reg_pass_confirm");
+  if (init_pass.value == con_pass.value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'password matching';
+  } 
+  else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'password not matching';
+      }
+}

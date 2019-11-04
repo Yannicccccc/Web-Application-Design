@@ -35,7 +35,7 @@
 <body>
 <div id="wrapper">
     <header>
-        <button class="login">login/logout</button>
+        <button class="login" onclick="window.location.href='login.html'"">login/logout</button>
         <img src="logo.png" class="logo"/>
         <script type = "text/javascript" src = "detail.js"></script>
   	</header>
