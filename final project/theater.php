@@ -79,7 +79,7 @@
             exit;
         }
 
-        $query = "SELECT* FROM movie WHERE movieid=" .$movieid. ";";
+        $query = "UPDATE theater SET activate = 1 WHERE theaterid = ".$choice.";";
         $result = $db->query($query);
         $data = $result->fetch_assoc();
 
