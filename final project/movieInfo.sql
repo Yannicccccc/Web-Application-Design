@@ -47,3 +47,11 @@ CREATE TABLE corps (
     corp_address VARCHAR(50),
     corp_postal VARCHAR(50)
 );
+-- table for users
+CREATE TABLE users (
+    name VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(50),
+    email VARCHAR(50),
+    profilepic VARCHAR(50),
+    points INT
+);
