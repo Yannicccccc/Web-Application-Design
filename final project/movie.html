@@ -19,7 +19,7 @@
             <nav class="topnav">
                 <button onclick="window.location.href='index.html'">Home</button>
                 <button onclick="window.location.href='movie.html'" class="active">Movie</button>
-                <button onclick="window.location.href='theater.html'">Theater</button>
+                <button onclick="window.location.href='theater.php'">Theater</button>
                 <button onclick="window.location.href='promotion.html'">Promotion</button>
                 <button onclick="window.location.href='corporate.html'">Corporate Events</button>
             </nav>
@@ -30,33 +30,35 @@
                 <button onclick="showForm(1)" class="topnav" id="btn1">Coming Soon</button>
             </nav>
 
-            <form action="show_get.php" class="sort">
+            <div id="filter" class="sort">
                 <p>Sort by:
-                <select>
-                <option value="none">none</option>
-                <optgroup label="Genre">
-                    <option value="action">Action</option>
-                    <option value="adventure">Adventure</option>
-                    <option value="crime">Crime</option>
-                    <option value="drama">Drama</option>
-                    <option value="family">Family</option>
-                    <option value="fantasy">Fantasy</option>
-                    <option value="sport">Sport</option>
-                    <option value="thriller">Thriller</option>
+                <select id="mySelect">
+                <option id="none" value="none">none</option>
+                <optgroup id="genre" label="Genre">
+                    <option id="action" value="action">Action</option>
+                    <option id="adventure" value="adventure">Adventure</option>
+                    <option id="crime" value="crime">Crime</option>
+                    <option id="drama" value="drama">Drama</option>
+                    <option id="family" value="family">Family</option>
+                    <option id="fantasy" value="fantasy">Fantasy</option>
+                    <option id="sport" value="sport">Sport</option>
+                    <option id="thriller" value="thriller">Thriller</option>
                 </optgroup>
-                <optgroup label="Rating">
-                    <option value="PG">PG</option>
-                    <option value="PG-13">PG-13</option>
-                    <option value="NC-16">NC-16</option>
+                <optgroup id="rating" label="Rating">
+                    <option id="PG" value="PG">PG</option>
+                    <option id="PG-13" value="PG-13">PG-13</option>
+                    <option id="NC-16" value="NC-16">NC-16</option>
                 </optgroup>
                 </select>
-                <input type="submit">
+                <button onclick="sort()">Search</button>
+                <p id="demo"></p>
                 </p>
-            </form>
+            </div>
         </div>  
 
         <div class="movie_active" id="showing">
             <table>
+                <tbody id="m1">
                 <tr>
                     <td rowspan="4"><img src="Poster-AWitnessOutOfTheBlue.jpg"/></td>
                     <td>Title</td>
@@ -79,6 +81,8 @@
                     <td><button name="buy1">Buy</button></td>
                 </tr>
                 </form>
+                </tbody>
+                <tbody id="m2">
                 <tr>
                     <td rowspan="4"><img src="Poster-Bigil.jpg"/></td>
                     <td>Title</td>
@@ -101,6 +105,8 @@
                     <td><button name="buy2">Buy</button></td>
                 </tr>
                 </form>
+                </tbody>
+                <tbody id="m3">
                 <tr>
                     <td rowspan="4"><img src="Poster-MaleficentMistressOfEvil-V2.jpg"/></td>
                     <td>Title</td>
@@ -123,6 +129,8 @@
                     <td><button name="buy3">Buy</button></td>
                 </tr>
                 </form>
+                </tbody>
+                <tbody id="m4">
                 <tr>
                     <td rowspan="4"><img src="Poster-TerminatorDarkFate-V2.jpg"/></td>
                     <td>Title</td>
@@ -143,6 +151,8 @@
                     <td><button name="buy4">Buy</button></td>
                 </tr>
                 </form>
+                </tbody>
+                <tbody id="m5">
                 <tr>
                     <td rowspan="4"><img src="Poster-TheKillTeam.jpg"/></td>
                     <td>Title</td>
@@ -164,7 +174,8 @@
                 <tr>
                     <td><button name="buy5">Buy</button></td>
                 </tr> 
-                </form>   
+                </form>
+                </tbody>   
             </table>   
         </div>
             

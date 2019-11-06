@@ -1,20 +1,89 @@
+//filter
+function sort(){
+    if (document.getElementById("none").selected == true) {
+        document.getElementById("m1").style.display = "block";
+        document.getElementById("m2").style.display = "block";  
+        document.getElementById("m3").style.display = "block";
+        document.getElementById("m4").style.display = "block";  
+        document.getElementById("m5").style.display = "block"; 
+    }
+    if (document.getElementById("action").selected == true) {
+        document.getElementById("m1").style.display = "none";
+        document.getElementById("m2").style.display = "block";  
+        document.getElementById("m3").style.display = "none";
+        document.getElementById("m4").style.display = "block";  
+        document.getElementById("m5").style.display = "block"; 
+    }
+    if (document.getElementById("adventure").selected == true) {
+        document.getElementById("m1").style.display = "none";
+        document.getElementById("m2").style.display = "none";  
+        document.getElementById("m3").style.display = "block";
+        document.getElementById("m4").style.display = "block";  
+        document.getElementById("m5").style.display = "none";  
+    }
+    if (document.getElementById("crime").selected == true) {
+        document.getElementById("m1").style.display = "block";
+        document.getElementById("m2").style.display = "none";
+        document.getElementById("m3").style.display = "none"; 
+        document.getElementById("m4").style.display = "none";
+        document.getElementById("m5").style.display = "none";   
+    }
+    if (document.getElementById("drama").selected == true) {
+        document.getElementById("m1").style.display = "none";
+        document.getElementById("m2").style.display = "none";
+        document.getElementById("m3").style.display = "none"; 
+        document.getElementById("m4").style.display = "none";
+        document.getElementById("m5").style.display = "block";   
+    }
+    if (document.getElementById("family").selected == true) {
+        document.getElementById("m1").style.display = "none";
+        document.getElementById("m2").style.display = "none";
+        document.getElementById("m3").style.display = "block"; 
+        document.getElementById("m4").style.display = "none";
+        document.getElementById("m5").style.display = "none";   
+    }
+    if (document.getElementById("fantasy").selected == true) {
+        document.getElementById("m1").style.display = "none";
+        document.getElementById("m2").style.display = "none";
+        document.getElementById("m3").style.display = "block"; 
+        document.getElementById("m4").style.display = "none";
+        document.getElementById("m5").style.display = "none";   
+    }
+    if (document.getElementById("sport").selected == true) {
+        document.getElementById("m1").style.display = "none";
+        document.getElementById("m2").style.display = "block";
+        document.getElementById("m3").style.display = "none"; 
+        document.getElementById("m4").style.display = "none";
+        document.getElementById("m5").style.display = "none";   
+    }
+    if (document.getElementById("thriller").selected == true) {
+        document.getElementById("m1").style.display = "none";
+        document.getElementById("m2").style.display = "none";
+        document.getElementById("m3").style.display = "none"; 
+        document.getElementById("m4").style.display = "none";
+        document.getElementById("m5").style.display = "block";   
+    }
+}
+
 //movie list tab switching
 function showForm(num){
-  document.getElementById("showing").style.display = "none";
-  document.getElementById("coming").style.display = "none";
-  var btn0 = document.getElementById("btn0");
-  var btn1 = document.getElementById("btn1");
+    document.getElementById("showing").style.display = "none";
+    document.getElementById("coming").style.display = "none";
+    var btn0 = document.getElementById("btn0");
+    var btn1 = document.getElementById("btn1");
 
-  if (num==0) {
-      document.getElementById("showing").style.display = "block";
-      btn0.className = "topnav active";
-      btn1.className = "topnav";
-  }    
-  if (num==1) {
-      document.getElementById("coming").style.display = "block";
-      btn0.className = "topnav";
-      btn1.className = "topnav active";
-  }
+    if (num==0) {
+        document.getElementById("filter").style.display = "block";
+        document.getElementById("showing").style.display = "block";
+        btn0.className = "topnav active";
+        btn1.className = "topnav";
+    }    
+    if (num==1) {
+        document.getElementById("filter").style.display = "none";
+        document.getElementById("coming").style.display = "block";
+        btn0.className = "topnav";
+        btn1.className = "topnav active";
+    }
 }
 
 //index.html functions
