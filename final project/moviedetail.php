@@ -16,19 +16,6 @@
     } else{
         $movieid = 5;
     }
-
-    @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
-    if (mysqli_connect_errno()){
-        echo 'Error: Could not connect to database.  Please try again later.';
-        exit;
-    }
-
-    $query = "SELECT* FROM movie WHERE movieid=" .$movieid. ";";
-    $result = $db->query($query);
-    $data = $result->fetch_assoc();
-
-    $result->free();
-    $db->close();
 ?>
 </head>
 
@@ -93,51 +80,26 @@
                 <th class="header">THEATER</th>
                 <th class="header" colspan="5">TIMING</th>
             </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+            <?php
+                @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+                $theatername = array("theater A", "theater B", "theater C");
+                for ($i=0; $i<3; $i++){
+                    echo "<tr>";
+                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    $temp = $movieid + $i*5;
+                    $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-09';";
+                    $j=0;
+                    while ($result = $db -> query($query)){
+                        $data_table[$i][$j] = $result -> fetch_assoc();
+                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
+                        $j++;
+                        $result -> free();
+                    } 
+                    echo "</tr>";
+                }
+                $result->free();
+                $db->close();
+            ?>
         </table>
 
         <table class="timeslot_popup" id="date2">
@@ -145,51 +107,26 @@
                 <th class="header">THEATER</th>
                 <th class="header" colspan="5">TIMING</th>
             </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+            <?php
+                @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+                $theatername = array("theater A", "theater B", "theater C");
+                for ($i=0; $i<3; $i++){
+                    echo "<tr>";
+                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    $temp = $movieid + $i*5;
+                    $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-10';";
+                    $j=0;
+                    while ($result = $db -> query($query)){
+                        $data_table[$i][$j] = $result -> fetch_assoc();
+                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
+                        $j++;
+                        $result -> free();
+                    } 
+                    echo "</tr>";
+                }
+                $result->free();
+                $db->close();
+            ?>
         </table>
 
         <table class="timeslot_popup" id="date3">
@@ -197,51 +134,26 @@
                 <th class="header">THEATER</th>
                 <th class="header" colspan="5">TIMING</th>
             </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+            <?php
+                @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+                $theatername = array("theater A", "theater B", "theater C");
+                for ($i=0; $i<3; $i++){
+                    echo "<tr>";
+                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    $temp = $movieid + $i*5;
+                    $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-11';";
+                    $j=0;
+                    while ($result = $db -> query($query)){
+                        $data_table[$i][$j] = $result -> fetch_assoc();
+                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
+                        $j++;
+                        $result -> free();
+                    } 
+                    echo "</tr>";
+                }
+                $result->free();
+                $db->close();
+            ?>
         </table>
 
         <table class="timeslot_popup" id="date4">
@@ -249,51 +161,26 @@
                 <th class="header">THEATER</th>
                 <th class="header" colspan="5">TIMING</th>
             </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
-                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
-                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
-            <tr>
-                <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-                <td><button onclick="window.location.href='buy.php'">slot</button></td>
-            </tr>
-            <tr>
-                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-                <td class="border"></td>
-            </tr>
+            <?php
+                @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+                $theatername = array("theater A", "theater B", "theater C");
+                for ($i=0; $i<3; $i++){
+                    echo "<tr>";
+                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    $temp = $movieid + $i*5;
+                    $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-12';";
+                    $j=0;
+                    while ($result = $db -> query($query)){
+                        $data_table[$i][$j] = $result -> fetch_assoc();
+                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
+                        $j++;
+                        $result -> free();
+                    } 
+                    echo "</tr>";
+                }
+                $result->free();
+                $db->close();
+            ?>
         </table>
         </form>
 
