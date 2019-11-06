@@ -17,7 +17,7 @@
         <nav class="topnav">
             <button onclick="window.location.href='index.html'">Home</button>
             <button onclick="window.location.href='movie.html'">Movie</button>
-            <button onclick="window.location.href='theater.html'" class="active">Theater</button>
+            <button onclick="window.location.href='theater.php'" class="active">Theater</button>
             <button onclick="window.location.href='promotion.html'">Promotion</button>
             <button onclick="window.location.href='corporate.html'">Corporate Events</button>
         </nav>
@@ -42,40 +42,14 @@
             <li><a href="?link=2" name="theaterB">theater B</a></li>
             <li><a href="?link=3" name="theaterC">theater C</a></li>
         </ul>
-
-        <?php
-            $link=$_GET['link'];
-            if ($link == '1'){
-                $choice = "theaterA";
-            }
-            else if ($link == '2'){
-                $choice = "theaterB";
-            }
-            else if ($link == '3'){
-                $choice = "theaterC";
-            }
-
-            @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
-            if (mysqli_connect_errno()){
-            echo 'Error: Could not connect to database.  Please try again later.';
-                exit;
-            }
-
-            $query = "SELECT* FROM movie WHERE movieid=" .$movieid. ";";
-            $result = $db->query($query);
-            $data = $result->fetch_assoc();
-
-            $result->free();
-            $db->close();
-        ?>
     </div>
 
     <div id="theaterportal">
         <table>
             <tr>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td><a href="?link=1"><img src="theater.png"/></a></td>
+                <td><a href="?link=2"><img src="theater.png"/></a></td>
+                <td><a href="?link=3"><img src="theater.png"/></a></td>
                 <td></td>
             </tr>
             <tr>
@@ -86,6 +60,32 @@
             </tr>
         </table>
     </div>
+
+    <?php
+        $link=$_GET['link'];
+        if ($link == '1'){
+            $choice = "theaterA";
+        }
+        else if ($link == '2'){
+            $choice = "theaterB";
+        }
+        else if ($link == '3'){
+            $choice = "theaterC";
+        }
+
+        @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+        if (mysqli_connect_errno()){
+            echo 'Error: Could not connect to database.  Please try again later.';
+            exit;
+        }
+
+        $query = "SELECT* FROM movie WHERE movieid=" .$movieid. ";";
+        $result = $db->query($query);
+        $data = $result->fetch_assoc();
+
+        $result->free();
+        $db->close();
+    ?>
 </div>
 </body>
 
