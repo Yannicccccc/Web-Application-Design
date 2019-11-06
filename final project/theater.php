@@ -38,15 +38,36 @@
     
     <div id="theaterlist">
         <ul>
-            <li>theater1</li>
-            <li>theater2</li>
-            <li>theater3</li>
-            <li>theater4</li>
-            <li>theater5</li>
-            <li>theater6</li>
-            <li>theater7</li>
-            <li>theater8</li>
+            <li><a href="?link=1" name="theaterA">theater A</a></li>
+            <li><a href="?link=2" name="theaterB">theater B</a></li>
+            <li><a href="?link=3" name="theaterC">theater C</a></li>
         </ul>
+
+        <?php
+            $link=$_GET['link'];
+            if ($link == '1'){
+                $choice = "theaterA";
+            }
+            else if ($link == '2'){
+                $choice = "theaterB";
+            }
+            else if ($link == '3'){
+                $choice = "theaterC";
+            }
+
+            @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+            if (mysqli_connect_errno()){
+            echo 'Error: Could not connect to database.  Please try again later.';
+                exit;
+            }
+
+            $query = "SELECT* FROM movie WHERE movieid=" .$movieid. ";";
+            $result = $db->query($query);
+            $data = $result->fetch_assoc();
+
+            $result->free();
+            $db->close();
+        ?>
     </div>
 
     <div id="theaterportal">
@@ -55,25 +76,13 @@
                 <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
                 <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
                 <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
+                <td></td>
             </tr>
             <tr>
                 <td>This is a description.</td>
                 <td>This is a description.</td>
                 <td>This is a description.</td>
-                <td>This is a description.</td>
-            </tr>
-            <tr>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
-                <td><a href="theaterdetail.html"><img src="theater.png"/></a></td>
-            </tr>
-            <tr>
-                <td>This is a description.</td>
-                <td>This is a description.</td>
-                <td>This is a description.</td>
-                <td>This is a description.</td>
+                <td></td>
             </tr>
         </table>
     </div>
