@@ -92,6 +92,7 @@ body {
     color: gray;
 }
 footer { 
+    margin-top: 100px;
     background-color: lightgray;
     font-size:70%;
     text-align: center;
@@ -417,7 +418,8 @@ footer {
     border-bottom: 1px dashed gray;
 }
 .timeslot_active th.time {
-    width: 100px;
+    width: 250px;
+    font-size: 10px;
     text-align: left;
     background-color: white;
     border-right: 1px dashed gray;
@@ -429,7 +431,8 @@ footer {
     border-bottom: 1px dashed gray;
 }
 .timeslot_active th.corner {
-    width: 100px;
+    width: 250px;
+    font-size: 10px;
     text-align: left;
     border-bottom: 1px dashed gray;
     border-right: 1px dashed gray;
@@ -455,14 +458,16 @@ footer {
     border-bottom: 1px dashed gray;
 }
 .timeslot_popup th.time {
-    width: 100px;
+    width: 250px;
+    font-size: 10px;
     text-align: left;
     background-color: white;
     border-right: 1px dashed gray;
     font-weight: 100;
 }
 .timeslot_popup th.corner {
-    width: 100px;
+    width: 250px;
+    font-size: 10px;
     text-align: left;
     border-bottom: 1px dashed gray;
     border-right: 1px dashed gray;
