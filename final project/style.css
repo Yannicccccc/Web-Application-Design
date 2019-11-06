@@ -37,9 +37,18 @@ header {
     list-style-type: none;
     padding-top: 20px;
 }	
-#theaterlist a{
-    text-decoration: none;
-    color: gray;
+#theaterlist input[type="submit"]{
+    text-align: left;
+    font-size: 18px;
+    border: none;
+    color: lightslategray;
+}
+#theaterlist input[type="submit"]:hover{
+    text-align: left;
+    font-size: 18px;
+    border: none;
+    background-color: lightgrey;
+    color: black;
 }
 #theaterportal{
     padding: 20px;
@@ -55,7 +64,7 @@ header {
     width: 120px;
     padding: 10px;
 }
-#theaterportal img{
+#theaterportal input[type="image"]{
     width: 120px;
 }
 #cinema {

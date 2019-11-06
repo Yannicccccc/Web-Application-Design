@@ -67,7 +67,7 @@
                 <td>Rating: <?php echo $data['score'];?></td>
             </tr>
             <tr>
-                <td><button onclick="window.location.href='buy.html'">Buy</button></td>
+                <td><button onclick="window.location.href='buy.php'">Buy</button></td>
             </tr>
             <tr>
                 <td></td>
@@ -80,11 +80,12 @@
         </table>
         
         <br>
+        <form method="POST" action="buy.php">
         <nav class="topnav">
-            <button onclick="showForm(0)" id="btn0" class="active">date1</button>
-            <button onclick="showForm(1)" id="btn1">date2</button>
-            <button onclick="showForm(2)" id="btn2">date3</button>
-            <button onclick="showForm(3)" id="btn3">date4</button>
+            <input type="button" onclick="showForm(0)" name="btn0" id="btn0" class="active" value="11-09">
+            <input type="button" onclick="showForm(1)" name="btn1" id="btn1" value="11-10">
+            <input type="button" onclick="showForm(2)" name="btn2" id="btn2" value="11-11">
+            <input type="button" onclick="showForm(3)" name="btn3" id="btn3" value="11-12">
         </nav>
 
         <table class="timeslot_active" id="date1">
@@ -94,24 +95,24 @@
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -124,14 +125,14 @@
             </tr>
             <tr>
                 <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
                 <td class="border"></td>
@@ -146,24 +147,24 @@
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -176,14 +177,14 @@
             </tr>
             <tr>
                 <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border" onclick="window.location.href='buy.html'"><button>slot</button></td>
+                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
                 <td class="border"></td>
@@ -198,24 +199,24 @@
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -228,14 +229,14 @@
             </tr>
             <tr>
                 <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border" onclick="window.location.href='buy.html'"><button>slot</button></td>
+                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
                 <td class="border"></td>
@@ -250,24 +251,24 @@
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater A</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border" onclick="window.location.href='buy.html'"><button>slot</button></td>
-                <td class="border" onclick="window.location.href='buy.html'"><button>slot</button></td>
-                <td class="border" onclick="window.location.href='buy.html'"><button>slot</button></td>
+                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
+                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
+                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
             </tr>
             <tr>
                 <th rowspan="2" class="time">Theater B</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -280,20 +281,21 @@
             </tr>
             <tr>
                 <th rowspan="2" class="corner">Theater C</td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
-                <td><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
+                <td><button onclick="window.location.href='buy.php'">slot</button></td>
             </tr>
             <tr>
-                <td class="border" onclick="window.location.href='buy.html'"><button>slot</button></td>
+                <td class="border" onclick="window.location.href='buy.php'"><button>slot</button></td>
                 <td class="border"></td>
                 <td class="border"></td>
                 <td class="border"></td>
                 <td class="border"></td>
             </tr>
         </table>
+        </form>
 
         <br><br>
         <table class="comment">
