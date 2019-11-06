@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Movie</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="wrapper">
+    <header>
+        <button class="login" onclick="window.location.href='login.html'"">login/logout</button>
+        <img src="logo.png" class="logo"/>
+        <script type = "text/javascript" src = "detail.js"></script>
+    </header>
+    
+    <nav class="topnav">
+        <button onclick="window.location.href='index.html'">Home</button>
+        <button onclick="window.location.href='movie.html'">Movie</button>
+        <button onclick="window.location.href='theater.html'" class="active">Theater</button>
+        <button onclick="window.location.href='promotion.html'">Promotion</button>
+    </nav>
+    <nav class="smallnav">
+        <a href="index.html" class="link">HOME</a><a> > </a>
+        <a href="theater.html" class="link">THEATER LISTING</a><a> > </a>
+        <a>THEATER DETAIL</a>
+    </nav>
+  
+  	<div id="cinema">
+        <p>This is a description. This is a description. This is a description. This is a description. This is a description. This is a description. This is a description. This is a description. </p>
+        <img src="theater.png"/>
+        <nav class="topnav">
+            <button onclick="showForm(0)" id="btn0" class="active">date1</button>
+            <button onclick="showForm(1)" id="btn1">date2</button>
+            <button onclick="showForm(2)" id="btn2">date3</button>
+            <button onclick="showForm(3)" id="btn3">date4</button>
+        </nav>
+
+        <table class="timeslot_active" id="date1">
+            <tr>
+                <th class="header">THEATER</th>
+                <th class="header" colspan="5">TIMING</th>
+            </tr>
+            <tr>
+                <th class="time">Movie A</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+            </tr>
+            <tr>
+                <th class="time">Movie B</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+                <td class="border"></td>
+            </tr>
+            <tr>
+                <th class="corner">Movie C</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+            </tr>
+        </table>
+
+        <table class="timeslot_popup" id="date2">
+            <tr>
+                <th class="header">THEATER</th>
+                <th class="header" colspan="5">TIMING</th>
+            </tr>
+            <tr>
+                <th class="time">Movie A</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+            </tr>
+            <tr>
+                <th class="time">Movie B</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+                <td class="border"></td>
+            </tr>
+            <tr>
+                <th class="corner">Movie C</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+            </tr>
+        </table>
+
+        <table class="timeslot_popup" id="date3">
+            <tr>
+                <th class="header">THEATER</th>
+                <th class="header" colspan="5">TIMING</th>
+            </tr>
+            <tr>
+                <th class="time">Movie A</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+            </tr>
+            <tr>
+                <th class="time">Movie B</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+                <td class="border"></td>
+            </tr>
+            <tr>
+                <th class="corner">Movie C</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+            </tr>
+        </table>
+
+        <table class="timeslot_popup" id="date4">
+            <tr>
+                <th class="header">THEATER</th>
+                <th class="header" colspan="5">TIMING</th>
+            </tr>
+            <tr>
+                <th class="time">Movie A</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+            </tr>
+            <tr>
+                <th class="time">Movie B</td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+                <td class="border"></td>
+            </tr>
+            <tr>
+                <th class="corner">Movie C</td>
+                <td class="border"><button class="border" onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button class="border" onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button class="border" onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"><button class="border" onclick="window.location.href='buy.html'">slot</button></td>
+                <td class="border"></td>
+            </tr>
+        </table>
+    </div>    
+</div>
+</body>
+
+<footer>
+    <small><i>Copyright &copy; 2019 DG03-F38</i></small>
+    <br>
+    <small><i><a href="DG03@F38.com">DG03@F38.com</a></i></small>
+</footer>	
+</html>
+
+
