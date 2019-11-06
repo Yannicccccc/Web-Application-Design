@@ -14,10 +14,6 @@
     }
 
     @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
-    if (mysqli_connect_errno()){
-        echo 'Error: Could not connect to database.  Please try again later.';
-        exit;
-    }
 
     $query = "UPDATE theater SET activate = 0;";
     $result = $db -> query($query);
