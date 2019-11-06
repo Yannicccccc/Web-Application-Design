@@ -14,7 +14,7 @@ CREATE TABLE theatermovie (
 CREATE TABLE theaterslot (
     slotid INT NOT NULL PRIMARY KEY,
     movieid INT NOT NULL REFERENCES theatermovie(movieid),
-    slotdate VARCHAR(10),
     slot VARCHAR(10),
+    slotdate VARCHAR(10),
     seat VARCHAR(50)
 );
