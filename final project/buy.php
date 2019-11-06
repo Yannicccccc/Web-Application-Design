@@ -38,6 +38,11 @@
     }
     $slotid = ($dateid-1)*51 + ($theater['tid']-1)*17 + $slot;
 
+    for ($i=1; $i<=204; $i++) {
+        $name = "m" + $i;
+        if (isset($_POST[$name])) $slotid = $i;
+    }
+
     $query = "SELECT slot FROM theaterslot AS slt WHERE slotid = ".$slotid.";";
     $result = $db->query($query);
     $time_slot = $result->fetch_assoc();
