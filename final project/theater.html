@@ -35,36 +35,22 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-L7L5IqsvZ8ycdU_0O7OJOyWCcLiQst0&callback=myMap"></script>
     </div>
-    
+
+    <form method="POST" action="theaterdetail.php">
     <div id="theaterlist">
         <ul>
-            <li><form method="POST" action="theaterdetail.php">
-                <input type="submit" name="theaterA" value="theater A">
-            </form></li>
-            <li><form method="POST" action="theaterdetail.php">
-                <input type="submit" name="theaterB" value="theater B">
-            </form></li>
-            <li><form method="POST" action="theaterdetail.php">
-                <input type="submit" name="theaterC" value="theater C">
-            </form></li>    
+            <li><input type="submit" name="theater1" value="theater A"></li>
+            <li><input type="submit" name="theater2" value="theater B"></li>
+            <li><input type="submit" name="theater3" value="theater C"></li>    
         </ul>
     </div>
 
     <div id="theaterportal">
         <table>
             <tr>
-                <td><form method="POST" action="theaterdetail.php">
-                        <input type="image" src="theater.png">
-                    </form>
-                </td>
-                <td><form method="POST" action="theaterdetail.php">
-                        <input type="image" src="theater.png">
-                    </form>
-                </td>
-                <td><form method="POST" action="theaterdetail.php">
-                        <input type="image" src="theater.png">
-                    </form>
-                </td>
+                <td><input type="image" name="theater[1]" src="theater.png"></td>
+                <td><input type="image" name="theater[2]" src="theater.png"></td>
+                <td><input type="image" name="theater[3]" src="theater.png"></td>
             </tr>
             <tr>
                 <td>This is a description.</td>
@@ -72,7 +58,8 @@
                 <td>This is a description.</td>
             </tr>
         </table>
-    </div>   
+    </div>
+    </form>   
 </div>
 </body>
 

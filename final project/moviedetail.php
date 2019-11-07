@@ -16,6 +16,10 @@
     } else{
         $movieid = 5;
     }
+    @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
+    $query = "SELECT * FROM movie WHERE movieid=" .$movieid. ";";
+    $result = $db -> query($query);
+    $data = $result -> fetch_assoc();
 ?>
 </head>
 
@@ -54,7 +58,7 @@
                 <td>Rating: <?php echo $data['score'];?></td>
             </tr>
             <tr>
-                <td><button onclick="window.location.href='buy.php'">Buy</button></td>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
@@ -84,18 +88,15 @@
                 @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
                 $theatername = array("theater A", "theater B", "theater C");
                 for ($i=0; $i<3; $i++){
-                    echo "<tr>";
-                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    echo '<tr>';
+                    echo '<th class="time">'.$theatername[$i].'</th>';
                     $temp = $movieid + $i*5;
                     $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-09';";
-                    $j=0;
-                    while ($result = $db -> query($query)){
-                        $data_table[$i][$j] = $result -> fetch_assoc();
-                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
-                        $j++;
-                        $result -> free();
+                    $result = $db -> query($query);
+                    while ( $data_table = $result -> fetch_assoc()){
+                        echo '<td class="border"><button name="m'.$data_table['slotid'].'">'.$data_table['slot'].'</button></td>';
                     } 
-                    echo "</tr>";
+                    echo '</tr>';
                 }
                 $result->free();
                 $db->close();
@@ -111,18 +112,15 @@
                 @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
                 $theatername = array("theater A", "theater B", "theater C");
                 for ($i=0; $i<3; $i++){
-                    echo "<tr>";
-                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    echo '<tr>';
+                    echo '<th class="time">'.$theatername[$i].'</th>';
                     $temp = $movieid + $i*5;
                     $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-10';";
-                    $j=0;
-                    while ($result = $db -> query($query)){
-                        $data_table[$i][$j] = $result -> fetch_assoc();
-                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
-                        $j++;
-                        $result -> free();
+                    $result = $db -> query($query);
+                    while ( $data_table = $result -> fetch_assoc()){
+                        echo '<td class="border"><button name="m'.$data_table['slotid'].'">'.$data_table['slot'].'</button></td>';
                     } 
-                    echo "</tr>";
+                    echo '</tr>';
                 }
                 $result->free();
                 $db->close();
@@ -138,18 +136,15 @@
                 @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
                 $theatername = array("theater A", "theater B", "theater C");
                 for ($i=0; $i<3; $i++){
-                    echo "<tr>";
-                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    echo '<tr>';
+                    echo '<th class="time">'.$theatername[$i].'</th>';
                     $temp = $movieid + $i*5;
                     $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-11';";
-                    $j=0;
-                    while ($result = $db -> query($query)){
-                        $data_table[$i][$j] = $result -> fetch_assoc();
-                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
-                        $j++;
-                        $result -> free();
+                    $result = $db -> query($query);
+                    while ( $data_table = $result -> fetch_assoc()){
+                        echo '<td class="border"><button name="m'.$data_table['slotid'].'">'.$data_table['slot'].'</button></td>';
                     } 
-                    echo "</tr>";
+                    echo '</tr>';
                 }
                 $result->free();
                 $db->close();
@@ -165,18 +160,15 @@
                 @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
                 $theatername = array("theater A", "theater B", "theater C");
                 for ($i=0; $i<3; $i++){
-                    echo "<tr>";
-                    echo "<th rowspan='2' class='time'>".$theatername[$i]."</th>";
+                    echo '<tr>';
+                    echo '<th class="time">'.$theatername[$i].'</th>';
                     $temp = $movieid + $i*5;
                     $query = "SELECT slot, slotid FROM theaterslot WHERE movieid=" .$temp. " AND slotdate='11-12';";
-                    $j=0;
-                    while ($result = $db -> query($query)){
-                        $data_table[$i][$j] = $result -> fetch_assoc();
-                        echo "<td class='border' name=m'".$data_table[$i][$j]['slotid']."'><button>".$data_table[$i][$j]['slot']."</button></td>";
-                        $j++;
-                        $result -> free();
+                    $result = $db -> query($query);
+                    while ( $data_table = $result -> fetch_assoc()){
+                        echo '<td class="border"><button name="m'.$data_table['slotid'].'">'.$data_table['slot'].'</button></td>';
                     } 
-                    echo "</tr>";
+                    echo '</tr>';
                 }
                 $result->free();
                 $db->close();
