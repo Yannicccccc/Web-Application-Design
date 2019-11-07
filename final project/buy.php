@@ -14,6 +14,14 @@
         if (isset($_POST[$name2])) $slotid = $i;
     }
 
+    $query = "SELECT title FROM theatermovie, theaterslot WHERE theatermovie.movieid = theaterslot.movieid AND slotid = ".$slotid.";";
+    $result = $db->query($query);
+    $movietitle = $result->fetch_assoc();
+
+    $query = "SELECT * FROM movie WHERE title = '".$movietitle['title']."';";
+    $result = $db->query($query);
+    $data = $result->fetch_assoc();
+
     $query = "SELECT slot FROM theaterslot AS slt WHERE slotid = ".$slotid.";";
     $result = $db->query($query);
     $time_slot = $result->fetch_assoc();
