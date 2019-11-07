@@ -43,6 +43,5 @@ else {
     }
 }
 
-// header('Location:login.html');
-// change target to user profile sreen when it is done
+header('Location:profile.php');
 ?>
