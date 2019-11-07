@@ -19,4 +19,5 @@
 
     $query = "UPDATE theaterslot SET seat = ".$temp.";";
     $result = $db->query($query);
+    header("Location: buy.php");
 ?>
