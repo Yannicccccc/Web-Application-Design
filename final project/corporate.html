@@ -6,7 +6,10 @@
 <link rel="stylesheet" href="style.css">
 <!-- <?php
     @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
-
+    if (mysqli_connect_errno()){
+        echo 'Error: Could not connect to database.  Please try again later.';
+        exit;
+    }
     //query movie names
     $query = "SELECT * FROM movie ORDER BY movieid DESC";
     $result = mysqli_query($db, $query);
@@ -29,7 +32,7 @@
             <nav class="topnav">
                 <button onclick="window.location.href='index.html'">Home</button>
                 <button onclick="window.location.href='movie.html'">Movie</button>
-                <button onclick="window.location.href='theater.html'">Theater</button>
+                <button onclick="window.location.href='theater.php'">Theater</button>
                 <button onclick="window.location.href='promotion.html'">Promotion</button>
                 <button onclick="window.location.href='corporate.html'" class="active">Corporate Events</button>
             </nav>

@@ -6,7 +6,10 @@
 <link rel="stylesheet" href="style.css">
 <!-- <?php
     @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
-
+    if (mysqli_connect_errno()){
+        echo 'Error: Could not connect to database.  Please try again later.';
+        exit;
+    }
     //query movie names
     $query = "SELECT * FROM movie ORDER BY movieid DESC";
     $result = mysqli_query($db, $query);
@@ -19,7 +22,7 @@
 <body>
 <div id="wrapper">
     <header>
-        <button class="login">login/logout</button>
+        <button class="login" onclick="window.location.href='login.html'">login/logout</button>
         <img src="logo.png" class="logo"/>
         <script type = "text/javascript" src = "moivelist.js"></script>
   	</header>
@@ -69,41 +72,35 @@
                 <button onclick="showForm1(2)" class="topnav" id="btn2">Top Movies</button>
             </nav>
         
-            <form action="show_get.php" class="sort">
+            <form action="moviedetail.php" class="sort" method="POST">
                 <p>Select movie:
-                <select>
-                <!-- <?php while($data = mysqli_fetch_array($result)):;?>
-                <option value="none">Select movie</option>
-                <option value="<?php echo $data[0];?>"><?php echo $data[1];?></option>
-                <?php endwhile;?> -->
-                <option value="none" name="select_movie">Select movie</option>
-                <option value="1" name="select_movie">A Witness Out Of Blue</option>
-                <option value="2" name="select_movie">Bigil</option>
-                <option value="3" name="select_movie">Maleficient: Mistress Of Evil</option>
-                <option value="4" name="select_movie">Terminator: Dark Fate</option>
-                <option value="5" name="select_movie">The Kill Team</option>
+                <select name="select" id="select" name="select">
+                <option value="" disabled selected>Select movie</option>
+                <option value="1" name="movie1">A Witness Out Of Blue</option>
+                <option value="2" name="movie2">Bigil</option>
+                <option value="3" name="movie3">Maleficient: Mistress Of Evil</option>
+                <option value="4" name="movie4">Terminator: Dark Fate</option>
+                <option value="5" name="movie5">The Kill Team</option>
                 </select>
                 Select theatre:
                 <select>
-                    <option value="none">Select theatre</option>
-                    <option value="1" name="select_theatre">Theatre 1</option>
-                    <option value="2" name="select_theatre">Theatre 2</option>
-                    <option value="3" name="select_theatre">Theatre 3</option>
-                    <option value="4" name="select_theatre">Theatre 4</option>
-                    <option value="5" name="select_theatre">Theatre 5</option>
+                    <option value="" disabled selected>Select theatre</option>
+                    <option value="1" name="select_theatre" disabled>Theatre 1</option>
+                    <option value="2" name="select_theatre" disabled>Theatre 2</option>
+                    <option value="3" name="select_theatre" disabled>Theatre 3</option>
+                    <option value="4" name="select_theatre" disabled>Theatre 4</option>
+                    <option value="5" name="select_theatre" disabled>Theatre 5</option>
                 </select>
                 Select date:
                 <select>
-                    <option value="2019-11-01">Fri, 1 Nov 2019</option>
-                    <option value="2019-11-02">Sat, 2 Nov 2019</option>
-                    <option value="2019-11-03">Sun, 3 Nov 2019</option>
-                    <option value="2019-11-04">Mon, 4 Nov 2019</option>
-                    <option value="2019-11-05">Tue, 5 Nov 2019</option>
-                    <option value="2019-11-06">Wed, 6 Nov 2019</option>
-                    <option value="2019-11-07">Thu, 7 Nov 2019</option>
+                    <option value="" disabled selected>Select date</option>
+                    <option value="11-09" disabled>Sat, 9 Nov 2019</option>
+                    <option value="11-10" disabled>Sun, 10 Nov 2019</option>
+                    <option value="11-11" disabled>Mon, 11 Nov 2019</option>
+                    <option value="11-12" disabled>Tue, 12 Nov 2019</option>
                 </select>
 
-                <input type="submit">
+                <input type="submit" value="Submit">
                 </p>
             </form>
         </div>  

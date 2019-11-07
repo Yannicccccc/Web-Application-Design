@@ -38,3 +38,6 @@ INSERT INTO promos VALUES
     (6, "promo6.jpg"),
     (7, "promo7.jpg"),
     (8, "promo8.jpg");
+
+INSERT INTO users VALUES
+    ("username", "password", "test@host.com", "profilepic.jpg", 0);
