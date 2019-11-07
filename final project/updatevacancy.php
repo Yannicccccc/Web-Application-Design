@@ -5,7 +5,8 @@
         exit;
     }
     
-    $query = "SELECT seat FROM theaterslot WHERE slotid = " .$id. ";";
+    $query = "SELECT seat FROM theaterslot WHERE slotid = '".$id."' ";
+    echo $query;
     $result = $db->query($query);
     $temp = $result->fetch_assoc();
 
@@ -17,7 +18,7 @@
         }
     }
 
-    $query = "UPDATE theaterslot SET seat = ".$temp['seat'].";";
+    $query = "UPDATE theaterslot SET seat = '".$temp['seat']."' ";
     $result = $db->query($query);
-    header("Location: buy.php");
+    header("Location: index.php");
 ?>

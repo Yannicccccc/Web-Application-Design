@@ -14,14 +14,6 @@
         if (isset($_POST[$name2])) $slotid = $i;
     }
 
-    $query = "SELECT title FROM theatermovie, theaterslot WHERE theatermovie.movieid = theaterslot.movieid AND slotid = ".$slotid.";";
-    $result = $db->query($query);
-    $movietitle = $result->fetch_assoc();
-
-    $query = "SELECT * FROM movie WHERE title = '".$movietitle['title']."';";
-    $result = $db->query($query);
-    $data = $result->fetch_assoc();
-
     $query = "SELECT slot FROM theaterslot AS slt WHERE slotid = ".$slotid.";";
     $result = $db->query($query);
     $time_slot = $result->fetch_assoc();
@@ -46,8 +38,8 @@
   
   	<div id="content">
         <nav class="smallnav">
-            <a href="index.html" class="link">HOME</a><a> > </a>
-            <a href="movie.html" class="link">MOVIE LISTING</a><a> > </a>
+            <a href="index.php" class="link">HOME</a><a> > </a>
+            <a href="movie.php" class="link">MOVIE LISTING</a><a> > </a>
             <a>BOOKING</a>
         </nav>
 
@@ -117,6 +109,8 @@
                 </table>
             </div>
             <input type="text" name="slotid" value=<?php echo $slotid;?> style="display:none">
+            <?php echo $slotid;?>
+            <?php echo $vacancy;?>
             <input class="btn" type="submit" value="Submit">
             </form>
         </div>
