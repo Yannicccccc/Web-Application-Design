@@ -9,7 +9,7 @@
     $result = $db->query($query);
     $temp = $result->fetch_assoc();
 
-    for ($i=1; $i<=40; $i++){
+    for ($i=0; $i<40; $i++){
         $name = "seat".$i;
         $id = $_POST['slotid'];
         if (isset($_POST[$name])) {
@@ -17,7 +17,7 @@
         }
     }
 
-    $query = "UPDATE theaterslot SET seat = ".$temp.";";
+    $query = "UPDATE theaterslot SET seat = ".$temp['seat'].";";
     $result = $db->query($query);
     header("Location: buy.php");
 ?>
