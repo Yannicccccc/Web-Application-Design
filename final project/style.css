@@ -1,21 +1,21 @@
 #wrapper { 
-    background-color: #202020;
+    background-color: white;
     width: 70%;
     margin: auto;
     min-width:850px;
 } 
 header { 
     height: 100px;
-    background-color: #202020;
+    background-color: white;
     margin: 0px;
 }  
 #content {	
     margin-top: 0px;
-    background-color: #202020;
+    background-color: white;
 } 
 #intro{
     margin-top: 0px;
-    background-color: #202020;
+    background-color: white;
 }
 #intro p{    
     width: 550px;
@@ -30,7 +30,7 @@ header {
     width: 150px;
     height: auto;
     float: left;
-    background-color: #202020;
+    background-color: white;
     color: lightslategray;
 }
 #theaterlist ul{
@@ -54,7 +54,7 @@ header {
     padding: 20px;
     margin-left: 150px;
     height: auto;
-    background-color: #202020;
+    background-color: white;
     color: lightslategray;
 }
 #theaterportal table{
@@ -69,7 +69,7 @@ header {
 }
 #cinema {
     margin-top: 0px;
-    background-color: #202020;
+    background-color: white;
 }
 #cinema p{
     width: 650px;
@@ -101,7 +101,7 @@ header {
 }
 body {
     font-family:Verdana, Arial, sans-serif;
-    background-color: #202020;
+    background-color: white;
     color: gray;
 }
 footer { 
@@ -115,7 +115,7 @@ footer {
 }
 
 .topnav {
-    background-color: #202020;
+    background-color: white;
     overflow: hidden;
 }  
 .topnav button {
@@ -145,13 +145,13 @@ footer {
 
 .smallnav {
     padding-left: 10px;
-    background-color: #202020;
+    background-color: white;
     font-size: 12px;
     color: gray;
     display: inline;
 } 
 .smallnav a {
-    background-color: #202020;
+    background-color: white;
     color: gray;
     text-decoration: none;
     display: inline;
@@ -220,7 +220,7 @@ footer {
     margin-left: 10px;
     z-index: 9;
     color: black; 
-    background-color: #202020;
+    background-color: white;
     width: 800px;
     height: 100%;
     border-style: none;
@@ -275,6 +275,12 @@ footer {
     width: 45px;
 }
 .hall input[type="image"] {
+    width: 35px;
+    margin: auto;
+    display: block;
+    z-index: 9;
+}
+.hall img {
     width: 35px;
     margin: auto;
     display: block;
@@ -437,7 +443,7 @@ footer {
     width: 250px;
     font-size: 10px;
     text-align: left;
-    background-color: #202020;
+    background-color: white;
     border-right: 1px dashed gray;
     font-weight: 100;
 }
@@ -477,7 +483,7 @@ footer {
     width: 250px;
     font-size: 10px;
     text-align: left;
-    background-color: #202020;
+    background-color: white;
     border-right: 1px dashed gray;
     font-weight: 100;
 }
@@ -576,7 +582,7 @@ footer {
     margin-left: 10px;
     z-index: 9;
     color: black; 
-    background-color: #202020;
+    background-color: white;
     width: 100%;
     height: 100%;
     border-style: none;
@@ -587,7 +593,7 @@ footer {
     margin-left: 10px;
     z-index: 9;
     color: black; 
-    background-color: #202020;
+    background-color: white;
     width: 100%;
     height: 100%;
     border-style: none;
@@ -598,7 +604,7 @@ footer {
     margin-left: 10px;
     z-index: 9;
     color: black; 
-    background-color: #202020;
+    background-color: white;
     width: 100%;
     height: 100%;
     border-style: none;
@@ -609,7 +615,7 @@ footer {
     margin-left: 10px;
     z-index: 9;
     color: black; 
-    background-color: #202020;
+    background-color: white;
     width: 100%;
     height: 100%;
     border-style: none;

@@ -42,7 +42,8 @@ function showForm(num){
 function bookseat(num){
     var str = "seat" + num;
     var str1 = "seat" + num + "-1";
-    if(document.getElementById(str).className==""){
+    var vacancy = ""
+    if (document.getElementById(str).className=="") {
         document.getElementById(str).className = "hide";
         document.getElementById(str1).className = "";
         document.getElementById("seatnum").value = parseInt(document.getElementById("seatnum").value) + 1;
@@ -53,5 +54,11 @@ function bookseat(num){
         document.getElementById(str1).className = "hide";
         document.getElementById("seatnum").value = parseInt(document.getElementById("seatnum").value) - 1;
         document.getElementById("tot").value = "$" + parseInt(document.getElementById("seatnum").value) * 9.5;
-    }    
+    }  
+    for (var i=0; i<40; i++) {
+        var temp = "seat" + i;
+        if (document.getElementById(temp).className=="") vacancy = vacancy + "0";
+        if (document.getElementById(temp).className=="hide") vacancy = vacancy + "1";
+    }  
+    document.getElementById("seatvacancy").value = vacancy;
 }

@@ -14,6 +14,19 @@
         if (isset($_POST[$name2])) $slotid = $i;
     }
 
+    $query = "SELECT movieid FROM theaterslot WHERE slotid = ".$slotid.";";
+    $result = $db->query($query);
+    $movie = $result->fetch_assoc();
+    $movieid = $movie['movieid'] % 5;
+
+    $query = "SELECT slotdate FROM theaterslot WHERE slotid = ".$slotid.";";
+    $result = $db->query($query);
+    $dateid = $result->fetch_assoc();
+
+    $query = "SELECT * FROM movie WHERE movieid = ".$movieid.";";
+    $result = $db->query($query);
+    $data = $result->fetch_assoc();
+
     $query = "SELECT slot FROM theaterslot AS slt WHERE slotid = ".$slotid.";";
     $result = $db->query($query);
     $time_slot = $result->fetch_assoc();
@@ -52,7 +65,7 @@
                 <td><?php echo $data['rate'];?></td>
             </tr>
             <tr>
-                <td><?php echo $dateid;?></td>
+                <td><?php echo $dateid['slotdate'];?></td>
             </tr>
             <tr>
                 <td><?php echo $time_slot['slt'];?></td>
@@ -72,12 +85,13 @@
                     for ($j=0; $j<10; $j++){
                         $temp = $i*10 + $j;
                         if ($vacancy[$temp]=='1'){
-                           echo '<td id="seat'.$temp.'" class="hide"><input type="image" src="seat.png" name=seat"'.$temp.'" onclick="bookseat('.$temp.'); return false;"></td>';
-                           echo '<td id="seat'.$temp.'-1"><input type="image" src="seat-selected.png" name=seat"'.$temp.'" onclick="bookseat('.$temp.'); return false;"></td>'; 
+                            echo '<td id="seat'.$temp.'" class="hide"><input type="image" src="seat.png" name="seat'.$temp.'" onclick="bookseat('.$temp.'); return false;"></td>';
+                            echo '<td id="seat'.$temp.'-1" class="hide"><input type="image" src="seat-selected.png" name="seat'.$temp.'-1" onclick="bookseat('.$temp.'); return false;"></td>';
+                            echo '<td><img src="seat-unavailable.png"></td>'; 
                         }    
                         if ($vacancy[$temp]=='0'){
-                            echo '<td id="seat'.$temp.'"><input type="image" src="seat.png" name=seat"'.$temp.'-1" onclick="bookseat('.$temp.'); return false;"></td>'; 
-                            echo '<td id="seat'.$temp.'-1" class="hide"><input type="image" src="seat-selected.png" name=seat"'.$temp.'-1" onclick="bookseat('.$temp.'); return false;"></td>'; 
+                            echo '<td id="seat'.$temp.'"><input type="image" src="seat.png" name="seat'.$temp.'" onclick="bookseat('.$temp.'); return false;"></td>'; 
+                            echo '<td id="seat'.$temp.'-1" class="hide"><input type="image" src="seat-selected.png" name="seat'.$temp.'-1" onclick="bookseat('.$temp.'); return false;"></td>';
                         }
          
                     }
@@ -109,8 +123,7 @@
                 </table>
             </div>
             <input type="text" name="slotid" value=<?php echo $slotid;?> style="display:none">
-            <?php echo $slotid;?>
-            <?php echo $vacancy;?>
+            <input type="text" id="seatvacancy" name="seatvacancy" value=<?php echo $vacancy;?> style="display:none">
             <input class="btn" type="submit" value="Submit">
             </form>
         </div>
