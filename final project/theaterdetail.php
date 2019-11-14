@@ -62,8 +62,8 @@
     </header>
     
     <nav class="smallnav">
-        <a href="index.html" class="link">HOME</a><a> > </a>
-        <a href="theater.html" class="link">THEATER LISTING</a><a> > </a>
+        <a href="index.php" class="link">HOME</a><a> > </a>
+        <a href="theater.php" class="link">THEATER LISTING</a><a> > </a>
         <a><?php echo $data['theatername'];?></a>
     </nav>
   

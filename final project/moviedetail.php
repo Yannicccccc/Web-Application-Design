@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
 <?php
+
     if (isset($_POST['movie1'])) {
         $movieid = 1;
     } else if (isset($_POST['movie2'])) {
@@ -13,9 +14,27 @@
         $movieid = 3;
     } else if (isset($_POST['movie4'])) {
         $movieid = 4;
-    } else{
+    } else if (isset($_POST['movie5'])) {
         $movieid = 5;
+    } else if (isset($_POST['select'])) {
+        if ($_POST['select'] = 1){
+            $movieid = 1;
+        }
+        if ($_POST['select'] = 2){
+            $movieid = 2;
+        }
+        if ($_POST['select'] = 3){
+            $movieid = 3;
+        }
+        if ($_POST['select'] = 4){
+            $movieid = 4;
+        }
+        if ($_POST['select'] = 5){
+            $movieid = 5;
+        }
     }
+    // echo $movieid;
+
     @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
     $query = "SELECT * FROM movie WHERE movieid=" .$movieid. ";";
     $result = $db -> query($query);
@@ -33,8 +52,8 @@
   
   	<div id="content">
         <nav class="smallnav">
-            <a href="index.html" class="link">HOME</a><a> > </a>
-            <a href="movie.html" class="link">MOVIE LISTING</a><a> > </a>
+            <a href="index.php" class="link">HOME</a><a> > </a>
+            <a href="movie.php" class="link">MOVIE LISTING</a><a> > </a>
             <a>MOVIE DETAIL</a>
         </nav>
 
