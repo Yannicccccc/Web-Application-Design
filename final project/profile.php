@@ -32,12 +32,14 @@ $booktitle = [];
 $bookdate = [];
 $booktime = [];
 $bookcinema = [];
+$bookid = [];
 while ($data2 = $result2->fetch_assoc()){
     $bookpic[$j] = $data2['pic'];
     $booktitle[$j] = $data2['title'];
     $bookdate[$j] = $data2['slotdate'];
     $booktime[$j] = $data2['slot'];
     $bookcinema[$j] = $data2['theatername'];
+    $bookid[$j] = $data2['bookid'];
     $j++;
 }
 
@@ -96,7 +98,7 @@ while ($data2 = $result2->fetch_assoc()){
 
         <div class="profilecontent2">
             <div class="gap"></div>
-
+            <form method="POST" action="cancel.php">
             <?php
                 for($j=0;$j<count($bookpic);$j++){
                     echo '<div class="history">';
@@ -110,23 +112,12 @@ while ($data2 = $result2->fetch_assoc()){
                     echo '<br>';
                     echo $bookcinema[$j];
                     echo '<br>';
-                    echo '<form method="POST" action="moviedetail.php"><input type="submit" name="cancel" value="Cancel booking"><br><input type="submit" name="reschedule" value="Reschedule booking"></form></div></div>';
+                    echo '<br>';
+                    echo '<input type="text" name="jvalue" value='.$bookid[$j].' style="display:none">';
+                    echo '<input type="submit" name="cancel" value="Cancel booking"></div></div>';
                 }
             ?>
-
-            <!-- <div class="history">
-                <img src="Poster-MaleficentMistressOfEvil-V2.jpg">
-                <div class="booking">
-                    Movie Title<br>
-                    Date : Time slot<br>
-                    Cinema<br>
-                    <form method="POST" action="moviedetail.php">
-                        <input type="submit" name="cancel" value="Cancel booking"><br>
-                        <input type="submit" name="reschedule" value="Reschedule booking">
-                    </form>
-                </div>
-            </div> -->
-            
+            </form>
             <div id="clear"></div>
         </div>
 

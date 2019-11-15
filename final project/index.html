@@ -4,22 +4,12 @@
 <title>L.L Cinemas</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
-<!-- <?php
-    @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
-
-    //query movie names
-    $query = "SELECT * FROM movie ORDER BY movieid DESC";
-    $result = mysqli_query($db, $query);
-
-    $result->free();
-    $db->close();
-?> -->
 </head>
 
 <body>
 <div id="wrapper">
     <header>
-        <button class="login">login/logout</button>
+        <button class="login" onclick="window.location.href='login.html'">login</button>
         <img src="logo.png" class="logo"/>
         <script type = "text/javascript" src = "moivelist.js"></script>
   	</header>

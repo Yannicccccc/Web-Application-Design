@@ -28,8 +28,8 @@ CREATE TABLE viewhist (
     pic VARCHAR(100) REFERENCES movie(pic)
 );
 -- some initial values for history
-INSERT INTO viewhist VALUES
-    (1, "username", "A Witness Out Of Blue", "Poster-AWitnessOutOfTheBlue.jpg");
+-- INSERT INTO viewhist VALUES
+--     (1, "username", "A Witness Out Of Blue", "Poster-AWitnessOutOfTheBlue.jpg");
 
 -- table for comments
 CREATE TABLE comments (
