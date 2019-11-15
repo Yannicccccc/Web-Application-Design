@@ -16,7 +16,7 @@
         $loglink = "logout.php";
     }
     else {
-        $login = "login/logout";
+        $login = "login";
         $loglink = "login.html";
     }
 ?>
@@ -26,6 +26,13 @@
 <div id="wrapper">
     <header>
         <button class="login" onclick="window.location.href='<?= $loglink ?>'"><?= $login ?></button>
+        <?php
+            if(isset($_SESSION['valid_user'])){
+        ?>
+        <button class="login" onclick="window.location.href='profile.php'">Profile</button>
+        <?php
+            }
+        ?>
         <img src="logo.png" class="logo"/>
         <script type = "text/javascript" src = "moivelist.js"></script>
   	</header>

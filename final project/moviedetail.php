@@ -39,13 +39,30 @@
     $query = "SELECT * FROM movie WHERE movieid=" .$movieid. ";";
     $result = $db -> query($query);
     $data = $result -> fetch_assoc();
+
+    session_start();
+    if (isset($_SESSION['valid_user'])){
+        $login = "logout";
+        $loglink = "logout.php";
+    }
+    else {
+        $login = "login";
+        $loglink = "login.html";
+    }
 ?>
 </head>
 
 <body>
 <div id="wrapper">
     <header>
-        <button class="login">login/logout</button>
+        <button class="login" onclick="window.location.href='<?= $loglink ?>'"><?= $login ?></button>
+        <?php
+            if(isset($_SESSION['valid_user'])){
+        ?>
+        <button class="login" onclick="window.location.href='profile.php'">Profile</button>
+        <?php
+            }
+        ?>
         <img src="logo.png" class="logo"/>
         <script type = "text/javascript" src = "detail.js"></script>
   	</header>

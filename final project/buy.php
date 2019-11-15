@@ -7,6 +7,16 @@
 <?php
     @ $db = new mysqli('localhost', 'f38ee', 'f38ee', 'f38ee');
 
+    session_start();
+    if (isset($_SESSION['valid_user'])){
+        $login = "logout";
+        $loglink = "logout.php";
+    }
+    else {
+        $login = "login";
+        $loglink = "login.html";
+    }
+
     for ($i=1; $i<=204; $i++) {
         $name1 = "m".$i;
         $name2 = "t".$i;
@@ -44,7 +54,14 @@
 <body>
 <div id="wrapper">
     <header>
-        <button class="login">login/logout</button>
+        <button class="login" onclick="window.location.href='<?= $loglink ?>'"><?= $login ?></button>
+        <?php
+            if(isset($_SESSION['valid_user'])){
+        ?>
+        <button class="login" onclick="window.location.href='profile.php'">Profile</button>
+        <?php
+            }
+        ?>
         <img src="logo.png" class="logo"/>
         <script type = "text/javascript" src = "detail.js"></script>
   	</header>
